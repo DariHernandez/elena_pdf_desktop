@@ -7,6 +7,8 @@
     --height-item-bar: 150px;
     --width-main: 710px; 
     --height-main: 600px;
+    --size-icons-left: 70px;
+    --radious-border-icons-left: 30px; 
 }
 
 body {

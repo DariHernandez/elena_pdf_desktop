@@ -23,13 +23,11 @@ body {
 /* Left bar */
 
 .left_bar {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
+    display: block;
     margin: 0;
     padding: 0;
     background-color: var(--color-standar);
+    height: var(--height-main);
 }
 
 .left_bar .item {
@@ -43,8 +41,8 @@ body {
 }
 
 .left_bar figure {
-    width: 80px;
-    height: 80px;
+    width: var(--size-icons-left);
+    height: var(--size-icons-left);
     padding: 0;
     margin: 0;
     z-index: 2;
@@ -61,8 +59,8 @@ body {
     display: none;
 }
 
-.item.active .borders {
-    display: block;
+.item .black {
+    display: none;
 }
 
 .item.active {
@@ -70,17 +68,30 @@ body {
     background-color: var(--color-background);
 }
 
+.item.active .borders {
+    display: block;
+}
+
+.item.active .black {
+    display: block;
+}
+
+.item.active .white {
+    display: none;
+}
+
+/* Borders os item in left menu */
 .borders {
     position: absolute;
     z-index: 1;
-    width: 90px;
-    height: 150px;
+    width: var(--width-item-bar);
+    height: var(--height-item-bar);
 }
 
 .corner {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: var(--radious-border-icons-left);
+    height: var(--radious-border-icons-left);
 }
 
 .corner.right {
@@ -93,12 +104,12 @@ body {
 
 .corner.right.top {
     right: 0;
-    top: -30px;
+    top: calc(0px - var(--radious-border-icons-left));
 }
 
 .corner.right.bottom {
     right: 0;
-    bottom: -30px;
+    bottom: calc(0px - var(--radious-border-icons-left));
 }
 
 .corner.left.top {
@@ -113,8 +124,8 @@ body {
 
 .circle {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: calc(var(--radious-border-icons-left) * 2);
+    height: calc(var(--radious-border-icons-left) * 2);
     border-radius: 50%;
 }
 
@@ -128,12 +139,12 @@ body {
 
 .circle.right.top {
     right: 0;
-    top: -60px;
+    top: calc(calc(0px - var(--radious-border-icons-left)) * 2);
 }
 
 .circle.right.bottom {
     right: 0;
-    bottom: -60px;
+    bottom: calc(calc(0px - var(--radious-border-icons-left)) * 2);
 }
 
 .circle.left.top {
@@ -151,8 +162,8 @@ body {
 .main_area {
     display: block;
     margin: auto 0;
-    width: 100%;
-    height: auto;
+    width: var(--width-main);
+    height: var(--height-main);
 }
 
 iframe {
