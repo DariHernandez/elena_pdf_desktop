@@ -1,0 +1,15 @@
+{
+  "name": "elena_pdf",
+  "version": "1.0.0",
+  "description": "Manage pdf files: merge, split, convert pdf to jpg or convert jpg to pdf.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Dari Developer",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.1.1"
+  }
+}
