@@ -1,0 +1,17 @@
+:root {
+    --color-background: #DBE2EF;
+    --color-standar: #3F72AF;
+    --color-highlighted:  #112D4E; 
+    --color-highlighted-inverse: #F9F7F7;
+    --width-item-bar: 90px; 
+    --height-item-bar: 150px;
+    --width-main: 710px; 
+    --height-main: 600px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    font-family: 'Philosopher', sans-serif;
+}

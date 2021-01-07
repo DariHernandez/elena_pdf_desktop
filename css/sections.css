@@ -1,0 +1,7 @@
+body {
+    width: var(--width-main);
+    height: var(--height-main);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
