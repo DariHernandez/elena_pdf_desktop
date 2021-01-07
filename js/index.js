@@ -37,14 +37,14 @@ button_merge.addEventListener ('click', function () {
 })
 
 button_split.addEventListener ('click', function () {
-    clicked_left_button (button_split, "html/home.html")    
+    clicked_left_button (button_split, "html/split.html")    
     // frame.setAttribute("src", )  
 })
 
 button_jpg_pdf.addEventListener ('click', function () {
-    clicked_left_button (button_jpg_pdf, "html/home.html")  
+    clicked_left_button (button_jpg_pdf, "html/jpg_pdf.html")  
 })
 
 button_pdf_jpg.addEventListener ('click', function () {
-    clicked_left_button (button_pdf_jpg, "html/home.html")   
+    clicked_left_button (button_pdf_jpg, "html/pdf_jpg.html")   
 })
