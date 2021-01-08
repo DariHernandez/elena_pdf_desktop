@@ -26,7 +26,25 @@ function drop_files () {
 
         // Add to list path of each file
         for (let f of e.dataTransfer.files) {
-            files.push(f.path)
+
+            // Verify extension of files
+            if (f.path.endsWith(".pdf")) {
+                files.push(f.path)
+            } else {
+                let start = f.path.lastIndexOf ('.')
+                let end = f.path.length
+                let file_extension = String (f.path).substr (start, end).toUpperCase()
+
+                alert (`INCORRECT FILE EXTENSION\
+                \nThis section doesn\'t support this type ( ${file_extension} ). \
+                \nTry with other document.`)
+
+                holder.classList.remove ("active")
+                holder.innerHTML = text_drop_area
+
+                return false
+            }
+            
         }
 
         e.preventDefault();
