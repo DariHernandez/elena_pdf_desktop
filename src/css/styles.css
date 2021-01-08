@@ -3,6 +3,8 @@
     --color-standar: #3F72AF;
     --color-highlighted:  #112D4E; 
     --color-highlighted-inverse: #F9F7F7;
+    --width: 800px; 
+    --height: 600px;
     --width-item-bar: 90px; 
     --height-item-bar: 150px;
     --width-main: 710px; 
@@ -16,4 +18,23 @@ body {
     padding: 0;
     background-color: var(--color-background);
     font-family: 'Philosopher', sans-serif;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #232931;
+        --color-standar: #4ECCA3;
+        --color-highlighted:  #CCCCCC; 
+        --color-highlighted-inverse: #F9F7F7;
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-background: #DBE2EF;
+        --color-standar: #3F72AF;
+        --color-highlighted:  #112D4E; 
+        --color-highlighted-inverse: #F9F7F7;
+    }
 }

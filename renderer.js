@@ -1,27 +1,12 @@
-function drop_files () {
-    var holder = document.getElementById('drag-file');
+// const { ipcRenderer } = require('electron')
 
-    holder.ondragover = () => {
-        return false;
-    };
+// next_theme = "dark"
 
-    holder.ondragleave = () => {
-        return false;
-    };
 
-    holder.ondragend = () => {
-        return false;
-    };
-
-    holder.ondrop = (e) => {
-        e.preventDefault();
-
-        for (let f of e.dataTransfer.files) {
-            console.log(f.path)
-        }
-        
-        return false;
-    };
-};
-
-drop_files()
+// try {
+//     document.querySelector('iframe').contentDocument.body.querySelector("#theme").addEventListener ("click", function () {
+//         ipcRenderer.send('update_theme', next_theme)
+//     })
+// } catch {
+//     console.log ("Seaching theme button")
+// }

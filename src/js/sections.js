@@ -7,12 +7,13 @@ theme_button = document.querySelector ("#theme")
 order_name_button.addEventListener ('click', function(){short_files("name")})
 order_date_button.addEventListener ('click', function(){short_files("date")})
 delete_button.addEventListener ('click', delete_files)
+// theme_button.addEventListener ('click', update_theme)
 
 // Detect drop evenets
 var holder = document.querySelector(".drop_area")  
 text_drop_area = "Drop your PDF FILES here"
 
-var files = []
+let files = []
 
 function restart_drop_area () { 
     holder.classList.remove ("active")
@@ -175,6 +176,13 @@ function delete_files () {
         restart_drop_area ()
     } 
 }
+
+// next_theme = "dark"
+// function update_theme () {
+//     const { ipcRenderer } = require('electron')
+
+//     ipcRenderer.send('update_theme', next_theme)
+// }
 
 //  Call funtion 
 drop_files ()
