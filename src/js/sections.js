@@ -52,7 +52,7 @@ function add_file () {
     text_drop_area += '<div class="grid_files">'
 
     for (file in files) {
-        text_drop_area += '<div class="file_document">'
+        text_drop_area += '<div class="file_document"></div>'
     }
                 
     text_drop_area += '</div>'
