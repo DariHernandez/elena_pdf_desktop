@@ -1,8 +1,16 @@
-// Detect drop evenets
+// Detect cick events
+order_name_button = document.querySelector ("#order_name")
+order_date_button = document.querySelector ("#order_date")
+delete_button = document.querySelector ("#delete")
+theme_button = document.querySelector ("#theme")
 
+order_name_button.addEventListener ('click', short_files)
+
+// Detect drop evenets
 var holder = document.querySelector(".drop_area")  
 text_drop_area = holder.innerHTML
 var files = []
+var files_names = []
 
 function drop_files () {
 
@@ -29,8 +37,8 @@ function drop_files () {
 
             // Verify extension of files
             if (f.path.endsWith(".pdf")) {
-                files.push(f.path)
-            } else {
+                files.push(f)
+            } else if (f.path.includes (".")) {
                 let start = f.path.lastIndexOf ('.')
                 let end = f.path.length
                 let file_extension = String (f.path).substr (start, end).toUpperCase()
@@ -43,6 +51,10 @@ function drop_files () {
                 holder.innerHTML = text_drop_area
 
                 return false
+            } else {
+                holder.classList.remove ("active")
+                holder.innerHTML = text_drop_area
+                return false
             }
             
         }
@@ -54,14 +66,14 @@ function drop_files () {
         holder.innerHTML = ""
 
         // Add file to html
-        add_file ()
+        update_files ()
 
         return false;
     };
 
 };
 
-function add_file () {
+function update_files () {
     // Add file to html grid files
     holder.classList.add ("files")
 
@@ -72,15 +84,16 @@ function add_file () {
     for (file_index in files) {
 
         // Get name of file
-        if (files[file_index].includes('/')) {
-            var start = String(files[file_index]).lastIndexOf("/") + 1
-        } else if (files[file_index].includes('\\')) {
-            var start = String(files[file_index]).lastIndexOf("\\") + 1
+        if (files[file_index].path.includes('/')) {
+            var start = String(files[file_index].path).lastIndexOf("/") + 1
+        } else if (files[file_index].path.includes('\\')) {
+            var start = String(files[file_index].path).lastIndexOf("\\") + 1
         }
+        var end = String(files[file_index].path).length - 4
+        var file_name = String(files[file_index].path).substring (start, end)
 
-        var end = String(files[file_index]).length - 4
-
-        var file_name = String(files[file_index]).substring (start, end)
+        // Save name
+        files_names.push (file_name)
         
         text_drop_area += '<div class="file_document">'
         text_drop_area += '<p class="quit">x</p>' 
@@ -93,6 +106,50 @@ function add_file () {
     // Add childs
     holder.innerHTML = text_drop_area
 
+}
+
+reverse_short = false
+function short_files () {
+
+    let len = files.length;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < len - 1; i++) {
+            if (files[i].name > files[i + 1].name) {
+                let tmp = files[i];
+                files[i] = files[i + 1];
+                files[i + 1] = tmp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    
+    // Reverse files
+    if (reverse_short == true) {
+
+        let files_reverse = []
+        let len = files.length;
+
+        for (let i = len - 1; i >= 0; i--) {
+            files_reverse.push (files[i])
+        }
+
+        files = files_reverse
+
+        reverse_short = false
+
+        alert ("Files shorted by name (reverse)")
+
+    } else {
+        reverse_short = true
+
+        alert ("Files shorted by name")
+    }    
+
+    // Update
+    update_files ()
 }
 
 //  Call funtion 
