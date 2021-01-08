@@ -32,6 +32,7 @@ p,a {
     font-size: 30px;
     font-weight: bold;
     overflow-y: scroll;
+    position: relative;
 }
 
 .section .drop_area::-webkit-scrollbar {
@@ -46,17 +47,53 @@ p,a {
 .section .drop_area.files .grid_files {
     display: grid;
     width: 90%;
-    height: 90%;
-    margin: 5%;
+    height: auto;
+    padding: 5%;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-flow: row;
     grid-auto-rows: calc(calc(var(--height-main)*.7) / 3);
     gap: 10px;
+    position: absolute;
+    top: 0;
 }
 
 .grid_files .file_document {
-    background-color: var(--color-highlighted);
+    border-radius: 10px;
+    border: 3px solid var(--color-highlighted);
+    background-color: var(--color-background);
+    position: relative;
+    overflow: hidden;
 }
+
+.grid_files .file_document .name_file {
+    border: none;
+    background-color: var(--color-highlighted);
+    font-size: 14px;
+    color: var(--color-highlighted-inverse);
+    margin: 0;
+    padding: 0 4px;
+    line-height: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.grid_files .file_document .quit {
+    border: none;
+    background-color: var(--color-highlighted);
+    font-size: 14px;
+    color: var(--color-highlighted-inverse);
+    margin: 0;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    font-weight: bold;
+}
+
 
 .section .button {
     width: calc(var(--width-main)*.75);
