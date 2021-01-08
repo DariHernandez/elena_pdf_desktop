@@ -14,22 +14,52 @@ function remove_actives () {
     button_pdf_jpg.classList.remove ('active')
 }
 
+
 function clicked_left_button (button, frame_link) {
-    // Event listener for active any buttons
-    if (Array.from(button.classList).includes('active')) {
-        remove_actives()  
-        
-        // Show home
-        frame.setAttribute("src", "html/home.html")  
 
-    } else {
+    // Get documents in the frop area
+    frame = document.querySelector('iframe')
+    files = frame.contentDocument.body.querySelectorAll('body > div > div.drop_area.files > div > div')
 
-        // Hide home / Show other frame
-        frame.setAttribute("src", frame_link) 
-        
-        remove_actives()
-        button.classList.add ('active')
+    // Set empty file list
+    if (files == undefined) {
+        files = []
     }
+
+    let changes_tap = true
+
+    // Verify number of files
+    if (files.length > 0) {
+
+        changes_tap = false
+                
+        // Question to changes menu
+        if (confirm("Your files will be lost. Do you want to continue?")) {
+            changes_tap = true
+        } 
+    }
+
+
+    if (changes_tap == true) {
+
+        // Event listener for active any buttons
+        if (Array.from(button.classList).includes('active')) {
+            remove_actives()  
+            
+            // Show home
+            frame.setAttribute("src", "html/home.html")  
+
+        } else {
+
+            // Hide home / Show other frame
+            frame.setAttribute("src", frame_link) 
+            
+            remove_actives()
+            button.classList.add ('active')
+        }  
+
+    }
+
 }
 
 button_merge.addEventListener ('click', function () {

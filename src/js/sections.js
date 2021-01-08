@@ -11,8 +11,8 @@ delete_button.addEventListener ('click', delete_files)
 // Detect drop evenets
 var holder = document.querySelector(".drop_area")  
 text_drop_area = "Drop your PDF FILES here"
+
 var files = []
-var files_names = []
 
 function restart_drop_area () { 
     holder.classList.remove ("active")
@@ -98,8 +98,6 @@ function update_files () {
         var end = String(files[file_index].path).length - 4
         var file_name = String(files[file_index].path).substring (start, end)
 
-        // Save name
-        files_names.push (file_name)
         
         text_drop_area_grid += '<div class="file_document">'
         text_drop_area_grid += '<p class="quit">x</p>' 
