@@ -4,13 +4,21 @@ order_date_button = document.querySelector ("#order_date")
 delete_button = document.querySelector ("#delete")
 theme_button = document.querySelector ("#theme")
 
-order_name_button.addEventListener ('click', short_files)
+order_name_button.addEventListener ('click', function(){short_files("name")})
+order_date_button.addEventListener ('click', function(){short_files("date")})
+delete_button.addEventListener ('click', delete_files)
 
 // Detect drop evenets
 var holder = document.querySelector(".drop_area")  
-text_drop_area = holder.innerHTML
+text_drop_area = "Drop your PDF FILES here"
 var files = []
 var files_names = []
+
+function restart_drop_area () { 
+    holder.classList.remove ("active")
+    holder.classList.remove ("files")
+    holder.innerHTML = text_drop_area
+}
 
 function drop_files () {
 
@@ -25,8 +33,7 @@ function drop_files () {
     };
 
     holder.ondragleave = () => {
-        holder.classList.remove ("active")
-        holder.innerHTML = text_drop_area
+        restart_drop_area ()
         return false;
     };
 
@@ -47,13 +54,12 @@ function drop_files () {
                 \nThis section doesn\'t support this type ( ${file_extension} ). \
                 \nTry with other document.`)
 
-                holder.classList.remove ("active")
-                holder.innerHTML = text_drop_area
+                restart_drop_area ()
 
                 return false
             } else {
-                holder.classList.remove ("active")
-                holder.innerHTML = text_drop_area
+                
+                restart_drop_area()
                 return false
             }
             
@@ -62,7 +68,7 @@ function drop_files () {
         e.preventDefault();
 
         // Reestart section
-        holder.classList.remove ("active")
+        restart_drop_area ()
         holder.innerHTML = ""
 
         // Add file to html
@@ -78,8 +84,8 @@ function update_files () {
     holder.classList.add ("files")
 
     // Generate childs
-    text_drop_area = ""
-    text_drop_area += '<div class="grid_files">'
+    text_drop_area_grid = ""
+    text_drop_area_grid += '<div class="grid_files">'
 
     for (file_index in files) {
 
@@ -95,28 +101,40 @@ function update_files () {
         // Save name
         files_names.push (file_name)
         
-        text_drop_area += '<div class="file_document">'
-        text_drop_area += '<p class="quit">x</p>' 
-        text_drop_area += `<p class="name_file"> ${file_name} </p>`
-        text_drop_area += '</div>'
+        text_drop_area_grid += '<div class="file_document">'
+        text_drop_area_grid += '<p class="quit">x</p>' 
+        text_drop_area_grid += `<p class="name_file"> ${file_name} </p>`
+        text_drop_area_grid += '</div>'
     }
                 
-    text_drop_area += '</div>'
+    text_drop_area_grid += '</div>'
 
     // Add childs
-    holder.innerHTML = text_drop_area
+    holder.innerHTML = text_drop_area_grid
 
 }
 
 reverse_short = false
-function short_files () {
-
+function short_files (order_by) {
+    
     let len = files.length;
     let swapped;
     do {
         swapped = false;
         for (let i = 0; i < len - 1; i++) {
-            if (files[i].name > files[i + 1].name) {
+
+            condition_sort = false
+            if (order_by == "name") {
+                if (files[i].name > files[i + 1].name) {
+                    condition_sort = true
+                }
+            } else if (order_by == "date") {
+                if (files[i].lastModified > files[i + 1].lastModified) {
+                    condition_sort = true
+                }        
+            }
+
+            if (condition_sort == true) {
                 let tmp = files[i];
                 files[i] = files[i + 1];
                 files[i + 1] = tmp;
@@ -140,16 +158,24 @@ function short_files () {
 
         reverse_short = false
 
-        alert ("Files shorted by name (reverse)")
+        alert (`Files shorted by ${order_by} (reverse)`)
 
     } else {
         reverse_short = true
 
-        alert ("Files shorted by name")
+        alert (`Files shorted by ${order_by}`)
     }    
 
     // Update
     update_files ()
+}
+
+function delete_files () {
+    if (confirm("Do you want to delete all files?")) {
+        files = []
+        update_files()
+        restart_drop_area ()
+    } 
 }
 
 //  Call funtion 
