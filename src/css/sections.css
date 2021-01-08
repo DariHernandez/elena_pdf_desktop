@@ -6,6 +6,11 @@ body {
     justify-content: center;
 }
 
+p,a {
+    margin: 0;
+    padding: 0;
+}
+
 /* Merge */
 .section {
     position: relative;
@@ -25,6 +30,20 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 30px;
+    font-weight: bold;
+}
+
+.section .drop_area .grid_files {
+    display: none;
+
+}
+
+.section .drop_area.files .grid_files {
+    display: grid;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .section .button {
