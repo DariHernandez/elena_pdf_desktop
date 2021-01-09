@@ -9,8 +9,11 @@
     --height-item-bar: 150px;
     --width-main: 710px; 
     --height-main: 600px;
-    --size-icons-left: 70px;
+    --size-icons-left: 80px;
     --radious-border-icons-left: 30px; 
+
+    --color-icons-bg: var(--color-standar)
+    --color-icons: var(--color-highlighted-inverse)
 }
 
 body {
@@ -26,7 +29,7 @@ body {
         --color-background: #232931;
         --color-standar: #4ECCA3;
         --color-highlighted:  #CCCCCC; 
-        --color-highlighted-inverse: #F9F7F7;
+        --color-highlighted-inverse: #0d1013;
     }
 }
   

@@ -46,6 +46,7 @@ function clicked_left_button (button, selector) {
         // Question to changes menu
         if (confirm("Your files will be lost. Do you want to continue?")) {
             changes_tap = true
+            
         } 
     }
 

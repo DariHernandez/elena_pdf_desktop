@@ -1,8 +1,8 @@
 // Detect cick events
-order_name_button = document.querySelector ("#order_name")
-order_date_button = document.querySelector ("#order_date")
-delete_button = document.querySelector ("#delete")
-theme_button = document.querySelector ("#theme")
+order_name_button = document.querySelector (".order_name")
+order_date_button = document.querySelector (".order_date")
+delete_button = document.querySelector (".delete")
+theme_button = document.querySelector (".theme")
 
 order_name_button.addEventListener ('click', function(){short_files("name")})
 order_date_button.addEventListener ('click', function(){short_files("date")})

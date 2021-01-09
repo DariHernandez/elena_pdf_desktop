@@ -1,12 +1,18 @@
-// const { ipcRenderer } = require('electron')
+const { ipcRenderer } = require('electron')
 
-// next_theme = "dark"
+theme_buttons = document.querySelectorAll('.theme')
+merge_buttons = document.querySelectorAll ("#merge > div > div.button")
 
+for (let i=0; i<theme_buttons.length; i++) {
 
-// try {
-//     document.querySelector('iframe').contentDocument.body.querySelector("#theme").addEventListener ("click", function () {
-//         ipcRenderer.send('update_theme', next_theme)
-//     })
-// } catch {
-//     console.log ("Seaching theme button")
-// }
+    theme_buttons[i].addEventListener('click', async () => {
+        const isDarkMode = await ipcRenderer.invoke('dark-mode:toggle')
+    })
+}
+
+for (let i=0; i<merge_buttons.length; i++) {
+
+    merge_buttons[i].addEventListener('click', async () => {
+        await ipcRenderer.invoke('dark-mode:system')
+    })
+}

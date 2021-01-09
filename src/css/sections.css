@@ -32,6 +32,7 @@
     font-weight: bold;
     overflow-y: scroll;
     position: relative;
+    color: var(--color-highlighted);
 }
 
 .section .drop_area::-webkit-scrollbar {
@@ -40,7 +41,6 @@
 
 .section .drop_area .grid_files {
     display: none;
-
 }
 
 .section .drop_area.files .grid_files {
