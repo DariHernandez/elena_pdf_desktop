@@ -42,8 +42,6 @@
 }
 
 .split_merge .element.right .title_element, .split_merge .element.left .title_element {
-    line-height: calc(var(--font-size) * 0.7);
-    font-size: calc(var(--font-size) * 0.7);
     z-index: 3;
 }
 
@@ -85,13 +83,6 @@
 .split_merge.split .element.center {
     width: 64%;
     height: 90%;
-    font-size: calc( var(--font-size) * 1.28 );
-}
-
-
-.split_merge.split .element.center .title_element{
-    line-height: calc(var(--font-size) * 1.28);
-    font-size: calc(var(--font-size) * 1.28);
 }
 
 /* Convert */

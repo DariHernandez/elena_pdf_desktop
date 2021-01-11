@@ -1,0 +1,90 @@
+/* Merge and split buttons */
+
+.item.merge .icon.merge div {
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-property: left, right, width, height, font-size, line-height;
+}
+
+
+.item.merge:hover .icon.merge div.left {
+    left: 20px;
+}
+
+.item.merge:hover .icon.merge div.right {
+    right: 20px;
+}
+
+.item.merge:hover .icon.merge div.center {
+    width: 64%;
+    height: 90%;
+}
+
+/* Split */
+
+.item.split .icon.split div {
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-property: left, right, width, height, font-size, line-height;
+}
+
+
+.item.split:hover .icon.split div.left {
+    left: 0px;
+}
+
+.item.split:hover .icon.split div.right {
+    right: 0px;
+}
+
+.item.split:hover .icon.split div.center {
+    width: 50%;
+    height: 70%;
+} 
+
+/* Convert buttons */
+
+.item.jpg_pdf .icon.jpg_pdf div {
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-property: left, right, top, bottom, transform
+}
+
+.item.jpg_pdf:hover .icon.jpg_pdf div.pdf {
+    bottom: 16px;
+}
+
+.item.jpg_pdf:hover .icon.jpg_pdf div.jpg {
+    top: 16px;
+}
+
+.item.jpg_pdf:hover .icon.jpg_pdf div.row {
+    right: 40px;
+    top: 0px;
+    transform: rotate(-90deg);
+}
+
+
+.item.pdf_jpg .icon.pdf_jpg div {
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-property: left, right, top, bottom, transform
+}
+
+.item.pdf_jpg:hover .icon.pdf_jpg div.jpg {
+    top: 0;
+}
+
+.item.pdf_jpg:hover .icon.pdf_jpg div.pdf {
+    bottom: 0;
+}
+
+.item.pdf_jpg:hover .icon.pdf_jpg div.row {
+    right: 40px;
+    top: 0px;
+    transform: rotate(-90deg);
+}

@@ -28,6 +28,8 @@ body {
     padding: 0;
     background-color: var(--color-standar);
     height: var(--height-main);
+    z-index: 1;
+    box-shadow: 4px 0px 4px 4px var(--color-background);
 }
 
 .left_bar .item {
@@ -164,6 +166,7 @@ body {
     margin: auto 0;
     width: var(--width-main);
     height: var(--height-main);
+    overflow: hidden;
 }
 
 /* Hide and show sections */

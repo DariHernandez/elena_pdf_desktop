@@ -1,0 +1,77 @@
+.main_area .section .button_main {
+    animation-name: section_button;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.main_area .section.active .button_main {
+    animation-play-state: running;
+}
+
+.main_area .section .drop_area, .main_area .section .buttons_top {
+    animation-name: section_area;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.main_area .section.active .drop_area, .main_area .section.active .buttons_top {
+    animation-play-state: running;
+}
+
+.main_area #home {
+    animation-name: home;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.main_area #home {
+    animation-play-state: running;
+}
+
+@keyframes section_button {
+    0% {
+        opacity: 0%;
+        transform: translateX(800px)
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateX(0px)
+    }
+}
+
+
+@keyframes section_area {
+    0% {
+        opacity: 0%;
+        transform: translateX(-800px)
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateX(0px)
+    }
+}
+
+
+@keyframes home {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}

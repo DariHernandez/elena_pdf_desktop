@@ -81,6 +81,16 @@ body {
     opacity: 20%;
 }
 
+/* Clickeable elements */
+.clickable, .button, .small_button {
+    cursor:pointer;
+}
+
+.button.disabled, .small_button.disabled {
+    cursor:default;
+}
+
+
 @media (prefers-color-scheme: dark) {
     :root {
         --color-background:#232931;
