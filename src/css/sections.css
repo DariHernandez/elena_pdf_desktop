@@ -94,7 +94,7 @@
 }
 
 
-.section .button {
+.section .button_main {
     width: calc(var(--width-main)*.75);
     margin: 0 auto;
     background-color: var(--color-standar);
@@ -107,7 +107,7 @@
     color: var(--color-background)
 }
 
-.section .button p {
+.section .button_main p {
     margin: 0;
 }
 

@@ -1,4 +1,6 @@
 // Detect cick events
+
+
 order_name_button = document.querySelector (".order_name")
 order_date_button = document.querySelector (".order_date")
 delete_button = document.querySelector (".delete")
@@ -7,7 +9,7 @@ theme_button = document.querySelector (".theme")
 order_name_button.addEventListener ('click', function(){short_files("name")})
 order_date_button.addEventListener ('click', function(){short_files("date")})
 delete_button.addEventListener ('click', delete_files)
-// theme_button.addEventListener ('click', update_theme)
+
 
 // Detect drop evenets
 var holder = document.querySelector(".drop_area")  
@@ -177,13 +179,12 @@ function delete_files () {
     } 
 }
 
-// next_theme = "dark"
-// function update_theme () {
-//     const { ipcRenderer } = require('electron')
+function update_buttons () {
 
-//     ipcRenderer.send('update_theme', next_theme)
-// }
+}
+
 
 //  Call funtion 
 drop_files ()
+
 
