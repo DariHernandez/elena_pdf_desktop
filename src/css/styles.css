@@ -14,7 +14,11 @@
 
 @font-face {
     font-family: Philosopher;
-    src: url ("./fonts/Philosopher/*")
+    src: url ("./fonts/Philosopher/Philosopher-Bold.ttf"),
+    url ("./fonts/Philosopher/Philosopher-BoldItalic.ttf"),
+    url ("./fonts/Philosopher/Philosopher-Italic.ttf"),
+    url ("./fonts/Philosopher/Philosopher-Regular.ttf"),
+
 }
 
 body {
