@@ -49,6 +49,13 @@ body {
     box-shadow: 1px 1px 4px 1px var(--color-shadow) inset;
 }
 
+.button.disabled, .small_button.disabled {
+    box-shadow: none;
+}
+
+.button.disabled div, .small_button.disabled div {
+    opacity: 20%;
+}
 
 @media (prefers-color-scheme: dark) {
     :root {
