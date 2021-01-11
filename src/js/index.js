@@ -29,7 +29,7 @@ function remove_actives () {
 function clicked_left_button (button, selector) {
 
     // Get documents in the frop area
-    let files_counter = document.querySelectorAll('#merge > div > div.drop_area.files > div > div')
+    let files_counter = document.querySelectorAll('#merge > div > label > div > div')
 
     // Set empty file list
     if (files_counter == undefined) {
@@ -46,7 +46,6 @@ function clicked_left_button (button, selector) {
         // Question to changes menu
         if (confirm("Your files will be lost. Do you want to continue?")) {
             changes_tap = true
-            
         } 
     }
 

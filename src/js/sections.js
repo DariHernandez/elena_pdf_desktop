@@ -6,16 +6,18 @@ var delete_active_button = false
 order_name_buttons = document.querySelectorAll (".order_name")
 order_date_buttons = document.querySelectorAll (".order_date")
 delete_buttons = document.querySelectorAll (".delete")
+file_inputs = document.querySelectorAll (".file_input")
 
 for (let i = 0; i < order_name_buttons.length; i++) {
     order_name_buttons[i].addEventListener ('click', function(){short_files("name")})
     order_date_buttons[i].addEventListener ('click', function(){short_files("date")})
     delete_buttons[i].addEventListener ('click', delete_files)
+    file_inputs[i].addEventListener ('change', select_file)
 }
 
 // Detect drop evenets
-var holder = document.querySelector(".drop_area")  
-text_drop_area = "Drop your PDF FILES here"
+var holder = document.querySelector (".drop_area")  
+text_drop_area = "Drop your PDF FILES here or Click"
 
 let files = []
 
@@ -225,6 +227,17 @@ function update_buttons_status () {
     }
 }
 
+function select_file (evt) {
+
+    // Get files path and add to list
+    for (let i = 0; i < evt.target.files.length; i++) {
+        if (evt.target.files[i].path.endsWith(".pdf")) {
+            files.push(evt.target.files[i])
+        }
+    }
+
+    update_files ()
+}
 
 //  Call funtion 
 drop_files ()
@@ -232,4 +245,6 @@ drop_files ()
 // Initial button status
 update_buttons_status()
 
+
+// Change section 
 
