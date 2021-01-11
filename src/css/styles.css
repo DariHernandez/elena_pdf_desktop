@@ -13,9 +13,33 @@
 }
 
 @font-face {
-    font-family: Philosopher;
-    src: url ("./fonts/Philosopher/*")
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: bold;
+    src: local("Philosopher-Bold"), url(./fonts/Philosopher/Philosopher-Bold.ttf)
 }
+
+@font-face {
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: normal;
+    src: local("Philosopher-Regular"), url(./fonts/Philosopher/Philosopher-Regular.ttf)
+}
+
+@font-face {
+    font-family: 'Philosopher';
+    font-style: italic;
+    font-weight: normal;
+    src: local("Philosopher-Italic"), url(./fonts/Philosopher/Philosopher-Italic.ttf)
+}
+
+@font-face {
+    font-family: 'Philosopher';
+    font-style: italic;
+    font-weight: bold;
+    src: local("Philosopher-BoldItalic"), url(./fonts/Philosopher/Philosopher-BoldItalic.ttf)
+}
+
 
 body {
     margin: 0;
