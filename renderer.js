@@ -10,9 +10,3 @@ for (let i=0; i<theme_buttons.length; i++) {
     })
 }
 
-for (let i=0; i<merge_buttons.length; i++) {
-
-    merge_buttons[i].addEventListener('click', async () => {
-        await ipcRenderer.invoke('dark-mode:system')
-    })
-}

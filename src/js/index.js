@@ -82,3 +82,4 @@ button_jpg_pdf.addEventListener ('click', function () {
 button_pdf_jpg.addEventListener ('click', function () {
     clicked_left_button (button_pdf_jpg, "#pdf_jpg")   
 })
+

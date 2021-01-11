@@ -319,3 +319,40 @@
 .active .transform .element.row div:nth-child(5) {
     background-color: var(--color-standar);
 }
+
+/* Main logo */
+
+.logo_container {
+    width: 150px;
+    height: 200px;
+    margin-left: 112px;
+    margin-bottom: 70px;
+}
+
+.logo_container .logo {
+    border-radius: 25px;
+    border: 15px solid var(--color-highlighted);
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.logo_container .logo p {
+    position: absolute;
+    left: -40px;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0;
+    border-radius: 10px;
+    background-color: var(--color-highlighted);
+    color: var(--color-background); 
+}
+
+/* Update image theme colors */
+.icon_moon {
+    line-height: 40px;
+    font-size: 23px;
+    color: var(--color-standar)
+}

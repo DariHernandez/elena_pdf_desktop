@@ -11,6 +11,7 @@ function createWindow () {
 
   win.loadFile('src/index.html')
   win.setMenuBarVisibility(false)
+  win.webContents.openDevTools()
 
   ipcMain.handle('dark-mode:toggle', () => {
     if (nativeTheme.shouldUseDarkColors) {
@@ -19,10 +20,6 @@ function createWindow () {
       nativeTheme.themeSource = 'dark'
     }
     return nativeTheme.shouldUseDarkColors
-  })
-
-  ipcMain.handle('dark-mode:system', () => {
-    nativeTheme.themeSouce = 'system'
   })
 }
 
@@ -39,3 +36,4 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
