@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item jpg_pdf clickable">
+                <div class="item pdf_jpg clickable">
                     <div class="borders">
                         <div class="corner right top"></div>
                         <div class="corner right bottom"></div>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item pdf_jpg clickable">
+                <div class="item jpg_pdf clickable">
                     <div class="borders">
                         <div class="corner right top"></div>
                         <div class="corner left top"></div>
@@ -202,34 +202,8 @@
                                 <div class="icon-brightness-contrast icon_moon" ></div>
                             </div>
                         </div>
-                        <input type="file" id="file_input_merge" class="file_input" style="display: none;" accept="application/pdf" multiple>
-                        <label for="file_input_merge" class="drop_area files clickable">
-                            Drop your PDF FILES here or Click
-                        </label>
-                        <div class="button_main button">
-                            <p>Merge PDFs</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section" id="pdf_jpg">
-                    <div class="section_contaer">
-                        <div class="buttons_top">
-                            <div class="small_button order_name button">
-                                <div class="icon-sort-alpha-asc icon_moon" ></div>
-                            </div>
-                            <div class="small_button order_date button">
-                                <div class="icon-clock icon_moon" ></div>
-                            </div>
-                            <div class="small_button delete button">
-                                <div class="icon-bin icon_moon" ></div>
-                            </div>
-                            <div class="small_button theme button">
-                                <div class="icon-brightness-contrast icon_moon" ></div>
-                            </div>
-                        </div>
-                        <input type="file" id="file_input_merge" class="file_input" style="display: none;" accept="application/pdf" multiple>
-                        <label for="file_input_merge" class="drop_area files clickable">
+                        <input type="file" id="file_input_split" class="file_input" style="display: none;" accept="application/pdf" multiple>
+                        <label for="file_input_split" class="drop_area files clickable">
                             Drop your PDF FILES here or Click
                         </label>
                         <div class="button_main button">
@@ -254,8 +228,34 @@
                                 <div class="icon-brightness-contrast icon_moon" ></div>
                             </div>
                         </div>
-                        <input type="file" id="file_input_merge" class="file_input" style="display: none;" accept="application/pdf" multiple>
-                        <label for="file_input_merge" class="drop_area files clickable">
+                        <input type="file" id="file_input_jpg_pdf" class="file_input" style="display: none;" accept="application/pdf" multiple>
+                        <label for="file_input_jpg_pdf" class="drop_area files clickable">
+                            Drop your PDF FILES here or Click
+                        </label>
+                        <div class="button_main button">
+                            <p>Merge PDFs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="pdf_jpg">
+                    <div class="section_contaer">
+                        <div class="buttons_top">
+                            <div class="small_button order_name button">
+                                <div class="icon-sort-alpha-asc icon_moon" ></div>
+                            </div>
+                            <div class="small_button order_date button">
+                                <div class="icon-clock icon_moon" ></div>
+                            </div>
+                            <div class="small_button delete button">
+                                <div class="icon-bin icon_moon" ></div>
+                            </div>
+                            <div class="small_button theme button">
+                                <div class="icon-brightness-contrast icon_moon" ></div>
+                            </div>
+                        </div>
+                        <input type="file" id="file_input_pdf_jpg" class="file_input" style="display: none;" accept="application/pdf" multiple>
+                        <label for="file_input_pdf_jpg" class="drop_area files clickable">
                             Drop your PDF FILES here or Click
                         </label>
                         <div class="button_main button">
@@ -268,7 +268,12 @@
 
         </div>
     </div>    
-    <script src="js/index.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/drop_files.js"></script>
+    <script src="js/section_buttons.js"></script>
+    <script src="js/left_buttons.js"></script>
+    
+    
     <script src="../renderer.js"></script>
 </body>
 </html>

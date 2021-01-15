@@ -37,3 +37,32 @@ app.on('activate', () => {
   }
 })
 
+// Pythonj conectr
+const {PythonShell} = require('python-shell');
+
+let pyshell = new PythonShell('python/main.py');
+
+let list_paths = [];
+
+list_paths.push ("file1.pdf")
+list_paths.push ("file2.pdf")
+list_paths.push ("file3.pdf")
+list_paths.push ("file4.pdf")
+list_paths.push ("file5.pdf")
+
+
+// Send data to python
+pyshell.send(list_paths)
+
+pyshell.on('message', function(message) {
+  // Print terminal of python
+  console.log(message);
+})
+
+pyshell.end(function (err) {
+  // Catch python error
+  if (err){
+    throw err;
+  };
+  console.log('finished');
+});

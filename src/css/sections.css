@@ -107,9 +107,19 @@
     color: var(--color-background)
 }
 
+.section .button_main.disabled {
+    box-shadow: none; 
+}
+
+.section .button_main.disabled p {
+    opacity: 30%;
+}
+
 .section .button_main p {
     margin: 0;
 }
+
+
 
 .section .buttons_top {
     height: auto;
